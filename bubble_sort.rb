@@ -14,6 +14,20 @@ def bubble_sort(arr)
   print arr
 end
 
-arr = [9, 3, 8, 1, 4, 7, 10, 6, 5, 2]
+def bubble_sort_by (arr)
+  arr.each do |x|
+    arr.each_with_index do |value,key|
+      if key != (arr.length()-1)
+        if yield(value, arr[key+1]) > 0
+          arr[key],arr[key+1] = arr[key+1],arr[key]
+        end
+      end
+    end
+  end
+   arr
+end
 
+arr = [3,5,6,9,2,3]
+string = ["hey","hello","hi"]
+p bubble_sort_by(string){|a,b| b.length - a.length}
 p bubble_sort(arr)
