@@ -12,19 +12,18 @@ def bubble_sort(arr)
     end
     break unless swapped
   end
-  print arr
+  return arr
 end
 
 def bubble_sort_by(arr)
   arr.each do
     arr.each_with_index do |value, key|
-      if key != (arr.length - 1)
-        if yield(value, arr[key + 1]).positive?
-          arr[key], arr[key + 1] = arr[key + 1], arr[key]
-        end
+      next unless key != (arr.length - 1)
+
+      if yield(value, arr[key + 1]).positive?
+        arr[key], arr[key + 1] = arr[key + 1], arr[key]
       end
     end
-    # arr
   end
   arr
 end
