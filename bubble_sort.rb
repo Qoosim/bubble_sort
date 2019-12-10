@@ -12,7 +12,7 @@ def bubble_sort(arr)
     end
     break unless swapped
   end
-  print arr
+  arr
 end
 
 def bubble_sort_by(arr)
