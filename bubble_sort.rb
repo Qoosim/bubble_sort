@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/MethodLength
 # frozen_string_literal: true
 
 def bubble_sort(arr)
@@ -32,3 +33,5 @@ arr = [3, 5, 6, 9, 2, 3]
 string = %w[hey hello hi]
 p bubble_sort_by(string) { |a, b| b.length - a.length }
 p bubble_sort(arr)
+
+# rubocop:enable Metrics/MethodLength
